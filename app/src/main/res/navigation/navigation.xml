@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.lingga.testmoviedb.ui.home.HomeFragment"
+        android:label="The Movie DB"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieUpcomingFragment"
+        android:name="com.lingga.testmoviedb.ui.upcoming.MovieUpcomingFragment"
+        android:label="Upcoming Movie"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_movieUpcomingFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+        <action
+            android:id="@+id/action_movieUpcomingFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieTopRatedFragment"
+        android:name="com.lingga.testmoviedb.ui.toprated.MovieTopRatedFragment"
+        android:label="Top Rated Movie"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_movieTopRatedFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+        <action
+            android:id="@+id/action_movieTopRatedFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieNowPlayingFragment"
+        android:name="com.lingga.testmoviedb.ui.nowplaying.MovieNowPlayingFragment"
+        android:label="Now Playing Movie"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_movieNowPlayingFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+        <action
+            android:id="@+id/action_movieNowPlayingFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.lingga.testmoviedb.ui.detail.MovieDetailFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="movie"
+            app:argType="com.lingga.testmoviedb.core.domain.model.Movie" />
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.lingga.testmoviedb.ui.favorite.FavoriteFragment"
+        android:label="Favorite Movie"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_favoriteFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+</navigation>
